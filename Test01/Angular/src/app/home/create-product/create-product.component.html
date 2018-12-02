@@ -1,0 +1,54 @@
+<app-content>
+    <form [formGroup]="form"(submit)="onSubmit()">
+      
+      <div class="row">
+        <label for="">บัตรประชาชน</label>
+        <input type="text" class="form-control"  formControlName="PERSION_NUMBER">
+      </div>
+      <br>
+      <div class="form-group row">
+        <label for="">คำนำหน้าชื่อ</label>
+        <div class="col-md-5">
+          <select class="form-control" formControlName="INITIAL_CODE">
+            <option selected="selected" value="นาย">นาย</option>
+            <option selected="selected" value="นางสาว">นางสาว</option>
+            <option selected="selected" value="นาง">นาง</option>
+       
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <label for="">ชื่อ</label>
+        <input type="text" class="form-control"  formControlName="NAME">
+      </div>
+
+      <div class="row">
+     
+        <label for="">นามสกุล</label>
+        <input type="text" class="form-control"  formControlName="LASTNAME">
+       
+      </div>
+      <div class="row">
+          <label for="">อายุ</label>
+          <input type="text" class="form-control" formControlName="AGE">
+        </div>
+
+          <br>
+          <div class="form-group row">
+            <label for="">เพศ</label>
+            <div class="col-md-5">
+              <select class="form-control" formControlName="GENDER">
+                <option selected="selected" value="ชาย">ชาย</option>
+                <option selected="selected" value="หญิง">หญิง</option>
+              </select>
+            </div>
+          </div><br>
+          
+          <div class="pull-right">
+  
+              <button type="submit" class="btn btn-primary">บันทึก</button>
+            
+          </div>
+    </form>
+  </app-content>

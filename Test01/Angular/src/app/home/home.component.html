@@ -1,0 +1,48 @@
+<app-content>
+
+    <div>
+      <br>
+    <div>
+  <div class="pull-right">
+    
+      <button type="button" class="btn btn-danger"(click)="gotoCreateProduct()">เพิ่มข้อมูล</button>
+  </div>
+    </div>
+    <br>
+    <table class="table">
+      <thead class="thead">
+        <tr>
+            <th scope="col">ลำดับ</th>
+          <th scope="col">หมายเลขบัตรประชาชน</th>
+          <th scope="col">คำนำหน้าชื่อ</th>
+          <th scope="col">ชื่อ</th>
+          <th scope="col">นามสกุล</th>
+          <th scope="col">อายุ</th>
+          <th scope="col">เพศ</th>
+          <th scope="col">ค่าดัชนีมวลกาย</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of item.rs">
+          <th scope="row">1</th>
+          <td>{{item.PERSION_NUMBER}}</td>
+          <td>{{item.INITIAL_CODE}}</td>
+          <td>{{item.NAME}}</td>
+          <td>{{item.LASTNAME}}</td>
+          <td>{{item.AGE}}</td>
+          <td>{{item.GENDER}}</td>
+          <td>{{item.WEIGHT/(HEIGHT*2)}}</td>
+          <td>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button class="btn btn-info" [routerLink]="['/home/edit',item.PERSION_NUMBER]">แก้ไข</button> 
+                    <button type="button" (click)="onDeleteData(item.PERSION_NUMBER)" class="btn btn-danger">ลบ</button>
+                    <button type="button"(click)="GotoCreatebmi()"class="btn btn-info">bmi</button>
+                  </div>
+            </td>
+            </tr>
+          </tbody>
+        </table>
+  </div>
+  
+  </app-content>

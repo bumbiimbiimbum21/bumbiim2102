@@ -1,0 +1,24 @@
+<app-content>
+    <h2>คำนวณหาค่า BMI</h2>
+  <form class="form-inline" [formGroup]="form" (submit)="onSubmit()">
+    <div class="form-group mx-sm-3 mb-2">
+        <label for="inputPassword2"  class="sr-only">น้ำหนัก</label>
+          <input type="number" class="form-control" id="inputPassword2" placeholder="น้ำหนัก" formControlName="WEIGHT">
+        </div>
+        <div class="form-group mx-sm-3 mb-2">
+            <label for="inputPassword2"  class="sr-only">ส่วนสูง</label>
+        <input type="number" class="form-control" id="inputPassword2" placeholder="ส่วนสูง" formControlName="HEIGHT">
+      </div>
+  <script>
+    var data1 = Math.round(form.get('WEIGHT').value / (form.get('HEIGHT').value*form.get('HEIGHT').value));
+  </script>
+  
+      <div class="form-group mx-sm-3 mb-2">
+          <label for="inputPassword2"  class="sr-only">ค่าเฉลี่ย</label>
+      <input type="number" readonly class="form-control" id="inputPassword2" placeholder="ค่าเฉลี่ย"  value="{{form.get('WEIGHT').value / (form.get('HEIGHT').value*form.get('HEIGHT').value)}}"   > 
+   
+  
+    </div>
+      <button type="submit" class="btn btn-primary mb-2">คำนวณหาค่า</button>
+    </form>
+  </app-content>
